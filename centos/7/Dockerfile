@@ -14,7 +14,7 @@ RUN cd MaxScale \
     && cmake .. -DWITH_SCRIPTS=N -DSTATIC_EMBEDDED=FALSE \
     && FLAGS="-Wno-unused-variable -Wno-unused-but-set-variable -Wno-unused-function" make install
 
-RUN yum -y history undo 4 & rm -rf MaxScale
+RUN yum -y history undo 4 && rm -rf MaxScale
 
 RUN mkdir -p /var/run/maxscale
 
